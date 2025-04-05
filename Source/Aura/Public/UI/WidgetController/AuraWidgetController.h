@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "AbilitySystemComponent.h"
-#include "UObject/NoExportTypes.h"
+//#include "UObject/NoExportTypes.h"
 #include "AuraWidgetController.generated.h"
 
 class UAttributeSet;
@@ -42,7 +42,9 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void SetWidgetControllerParams(const FWidgetControllerParams& WCParams);
 
-	virtual void BroadcastInitialValue();
+	virtual void BroadcastInitialValues();
+
+	virtual void BindCallBackToDependencies();
 protected:
 	UPROPERTY(BlueprintReadOnly, Category="WidgetController")
 	TObjectPtr<APlayerController> PlayerController;
